@@ -1,0 +1,119 @@
+<div class="content-wrapper ">
+  <div class="hold-transition login-page">
+    <div class="login-box " >
+      <div class="card card-outline card-warning">
+        <div class="card-header text-center">
+          <a class="h1"><img src="../../../assets/img/template/logo-no-back.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8" width="100"></a>
+        </div>
+        <div class="card-body">
+          <p class="login-box-msg"><b>Crear usuario</b></p>
+
+          <form autocomplete="off" [formGroup]="formInsert" (ngSubmit)="save()" >
+
+           <div class="input-group mb-lg-3">
+              <input type="text" class="form-control" placeholder="Nombre de usuario" formControlName="user">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-user"></span>
+                </div>
+              </div>
+            </div>
+            <small class="text-danger mb-2" *ngIf="isInvalidField('user')">{{getErrorMessage('user')}}</small>
+
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Contraseña" formControlName="password">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span> 
+                </div>
+              </div>
+            </div>
+            <small class="text-danger mb-2" *ngIf="isInvalidField('password')">{{getErrorMessage('password')}}</small>
+
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Tipología" formControlName="tipologia">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-layer-group"></span>
+                </div>
+              </div>
+            </div>
+            <small class="text-danger mb-2" *ngIf="isInvalidField('tipologia')">{{getErrorMessage('tipologia')}}</small>
+
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Tipo de usuario" formControlName="tipo_usuario">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-users-cog"></span>
+                </div>
+              </div>
+            </div>
+            <small class="text-danger mb-2" *ngIf="isInvalidField('tipo_usuario')">{{getErrorMessage('tipo_usuario')}}</small>
+
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Tipo de atención" formControlName="tipo_atencion">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-street-view"></span>
+                </div>
+              </div>
+            </div>
+            <small class="text-danger mb-2" *ngIf="isInvalidField('tipo_atencion')">{{getErrorMessage('tipo_atencion')}}</small>
+
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Establecimiento" formControlName="establecimiento">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-warehouse"></span>
+                </div>
+              </div>
+            </div>
+            <small class="text-danger mb-2" *ngIf="isInvalidField('establecimiento')">{{getErrorMessage('establecimiento')}}</small>
+
+    
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Provincia" formControlName="provincia">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fa fa-map"></span>
+                </div>
+              </div>
+            </div>
+            <small class="text-danger mb-2" *ngIf="isInvalidField('provincia')">{{getErrorMessage('provincia')}}</small>
+
+
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Distrito" formControlName="distrito">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fa fa-location-arrow"></span>
+                </div>
+              </div>
+            </div>
+            <small class="text-danger mb-2" *ngIf="isInvalidField('distrito')">{{getErrorMessage('distrito')}}</small>
+
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Rol" formControlName="role">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-user-tag"></span>
+                </div>
+              </div>
+            </div>
+            <small class="text-danger mb-2" *ngIf="isInvalidField('role')">{{getErrorMessage('role')}}</small>
+
+
+            <div class="row">
+              <div class="col-12">
+                <button type="submit" class="btn btn-warning btn-block">Crear usuario</button>
+              </div>
+              <!-- /.col -->
+            </div>
+          </form>
+
+
+        <!-- /.login-card-body -->
+      </div>
+    </div>
+  </div>
+</div>

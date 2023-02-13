@@ -1,0 +1,151 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Home</h1>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+  
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Info boxes -->
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+ 
+              <div class="info-box-content">
+                <span class="info-box-text">Usuarios Registrados</span>
+                <span class="info-box-number">
+                  4
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-warehouse"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">Establecimientos</span>
+                <span class="info-box-number">256</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+  
+          <!-- fix for small devices only -->
+          <div class="clearfix hidden-md-up"></div>
+  
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fa fa-map"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">Provincias</span>
+                <span class="info-box-number">4</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-warning elevation-1"><i class="fa fa-location-arrow"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text">Distritos</span>
+                <span class="info-box-number">10</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+  
+  
+          <div class="col-12 col-sm-8 col-md-8">
+            <div class="info-box mb-3" id="banner">
+              <span class="info-box-icon img-logo"><img src="https://cdn-icons-png.flaticon.com/512/1865/1865269.png" alt=""></span>
+             
+              <div class="info-box-content ml-3">
+                <span class="info-box-text marca">Coordinación Zonal 3</span>
+                <span class="info-box-number">5 de Junio & Barón de Carondelet, Riobamba</span>
+
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+  
+          <div class="col-12 col-sm-8 col-md-4">
+            <div class="info-box mb-3" id="banner">
+              <div style="text-align:center;padding:1em 0;pointer-events: none; cursor: default;"  class="mt-2">
+                <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=es&size=small&timezone=America%2FGuayaquil" width="100%" height="90" frameborder="0" seamless></iframe> </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+  
+  
+          <div class="col-12 col-sm-6 col-md-8" *ngIf="clima">
+            <div class="info-box mb-3" id="clima">
+              <span class="info-box-icon img-logo"><img src="{{urlIcono}}" alt=""></span>
+  
+              <div class="info-box-content mr-5 text-center">
+                <span class="info-box-text">{{country}}</span>
+                <span class="info-box-text marca">{{ciudad}}</span>
+                <span class="info-box-number">Temperatura actual: {{tempActual}}</span>
+                <span class="info-box-number">Temperatura mínima: {{tempMin}} - Temperatura máxima: {{tempMax}} </span>
+                <span class="info-box-number">Estado: {{descripcion}} </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+  
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box mb-3" id="clima">
+  
+              <span class="info-box-icon img-logo" *ngIf="navegador=='chrome'" ><img src="../../../../assets/img/browser/chrome.png" alt=""></span>
+              <span class="info-box-icon img-logo" *ngIf="navegador=='opera'"  ><img src="../../../../assets/img/browser/opera.png" alt=""></span>
+              <span class="info-box-icon img-logo" *ngIf="navegador=='edge'"   ><img src="../../../../assets/img/browser/edge.png" alt=""></span>
+              <span class="info-box-icon img-logo" *ngIf="navegador=='ie'"     ><img src="../../../../assets/img/browser/trident.png" alt=""></span>
+              <span class="info-box-icon img-logo" *ngIf="navegador=='firefox'"><img src="../../../../assets/img/browser/firefox.png" alt=""></span>
+              <span class="info-box-icon img-logo" *ngIf="navegador=='safari'" ><img src="../../../../assets/img/browser/safari.png" alt=""></span>
+              <span class="info-box-icon img-logo" *ngIf="navegador=='other'" ><img src="../../../../assets/img/browser/other.png" alt=""></span>
+  
+              <div class="info-box-content ml-3 pl-2">
+                <b><p>Navegador</p></b>
+              <span class="info-box-text marca" *ngIf="navegador=='chrome'">Chrome</span>
+              <span class="info-box-text marca" *ngIf="navegador=='opera'" > Opera</span>
+              <span class="info-box-text marca" *ngIf="navegador=='edge'">Edge</span>
+              <span class="info-box-text marca" *ngIf="navegador=='ie'">Trident</span>
+              <span class="info-box-text marca" *ngIf="navegador=='firefox'">Firefox</span>
+              <span class="info-box-text marca" *ngIf="navegador=='safari'">Safari</span>
+              <span class="info-box-text marca" *ngIf="navegador=='other'">Navegador</span>
+  
+                <span class="info-box-number" *ngIf="ip">{{ip}}</span>
+                <span class="info-box-number" *ngIf="!ip">127.0.0.1</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+        </div>
+      </div><!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  

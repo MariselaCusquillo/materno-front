@@ -1,0 +1,123 @@
+<div mat-dialog-content>
+    <mat-dialog-content>
+  
+      <div class="card card-warning">
+  
+        <div class="card-header mb-0">
+  
+          <h2 class="card-title mb-0">Editar usuarios</h2>
+          <button type="button" class="close" mat-dialog-close>&times;</button>
+  
+        </div>
+  
+        <form autocomplete="off" [formGroup]="formInsert" (ngSubmit)="save()">
+  
+          <div class="card-body">
+            <div class="row">
+              
+              <div class="col-lg-6 col-sm-12 mr-auto">
+                <div class="form-group">
+                  <label for="InputUser">Usuario:</label>
+                  <input type="text" id="InputUser" class="form-control"
+                    formControlName="user" [ngClass]="{'is-invalid': invalidField('user')}">
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+  
+              <div class="col-lg-6 col-sm-12 mr-auto">
+                <div class="form-group">
+                  <div class="form-check">
+                    <label for="InputTipologia">Tipología:</label>
+                    <input type="text" id="InputTipologia" class="form-control"
+                      formControlName="tipologia" [ngClass]="{'is-invalid': invalidField('tipologia')}">
+                    <span class="invalid-feedback">Campo obligatorío</span>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-lg-6 col-sm-12 mr-auto">
+                <div class="form-group">
+                  <div class="form-check">
+                    <label for="InputTipoUsuario">Tipo de Usuario:</label>
+                    <input type="text" id="InputTipoUsuario" class="form-control"
+                      formControlName="tipo_usuario" [ngClass]="{'is-invalid': invalidField('tipo_usuario')}">
+                    <span class="invalid-feedback">Campo obligatorío</span>
+                  </div>
+                </div>
+              </div>
+  
+  
+              <div class="col-lg-6 col-sm-12 mr-auto">
+                <div class="form-group">
+                  <div class="form-check">
+                    <label for="InputTipoAtencion">Tipo de Atención:</label>
+                    <input type="text" id="InputTipoAtencion" class="form-control"
+                      formControlName="tipo_atencion" [ngClass]="{'is-invalid': invalidField('tipo_atencion')}">
+                    <span class="invalid-feedback">Campo obligatorío</span>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-lg-6 col-sm-12 mr-auto">
+                <div class="form-group">
+                  <div class="form-check">
+                    <label for="InputEstablecimiento">Establecimiento:</label>
+                    <input type="text" id="InputEstablecimiento" class="form-control"
+                      formControlName="establecimiento" [ngClass]="{'is-invalid': invalidField('establecimiento')}">
+                    <span class="invalid-feedback">Campo obligatorío</span>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-lg-6 col-sm-12 mr-auto">
+                <div class="form-group">
+                  <div class="form-check">
+                    <label for="InputProvincia">Provincia:</label>
+                    <input type="text" id="InputProvincia" class="form-control"
+                      formControlName="provincia" [ngClass]="{'is-invalid': invalidField('provincia')}">
+                    <span class="invalid-feedback">Campo obligatorío</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6 col-sm-12 mr-auto">
+                <div class="form-group">
+                  <div class="form-check">
+                    <label for="InputDistrito">Distrito:</label>
+                    <input type="text" id="InputDistrito" class="form-control"
+                      formControlName="distrito" [ngClass]="{'is-invalid': invalidField('distrito')}">
+                    <span class="invalid-feedback">Campo obligatorío</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6 col-sm-12 mr-auto">
+                <div class="form-group">
+                  <div class="form-check">
+                    <label for="InputRole">Rol:</label>
+                    <input type="text" id="InputRole" class="form-control"
+                      formControlName="role" [ngClass]="{'is-invalid': invalidField('role')}">
+                    <span class="invalid-feedback">Campo obligatorío</span>
+                  </div>
+                </div>
+              </div>
+  
+             
+            </div>
+          </div>
+  
+          <div class="card-footer">
+            <button mat-dialog-close class="btn btn-secondary"><i class="fas fa-undo-alt mr-1"></i>Cancelar</button>
+            <button type="submit" class="btn btn-warning  float-right"><i class="fas fa-pencil-alt mr-1"></i>Actualizar</button>
+  
+          </div>
+  
+        </form>
+  
+  
+      </div>
+  
+    </mat-dialog-content>
+  
+  
+  </div>

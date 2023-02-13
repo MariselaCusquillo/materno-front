@@ -1,0 +1,10 @@
+
+.login-page, .register-page{
+  height: 105vh;
+}
+.mb-3, .my-3{
+  margin-bottom: 0.3rem !important;
+}
+.login-box{
+  width: 30rem;
+}
