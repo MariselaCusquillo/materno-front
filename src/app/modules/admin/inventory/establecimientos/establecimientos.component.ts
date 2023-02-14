@@ -32,7 +32,8 @@ export class EstablecimientosComponent implements OnInit {
     'distrito',
     'tipo_atencion',
     'eod',
-    'tipologia'];
+    'tipologia',
+    'accion'];
 
 
 
@@ -65,17 +66,30 @@ export class EstablecimientosComponent implements OnInit {
 
 
   async inicializarData() {
-    (await this._inventoryService.getAllEstablecimientos()).subscribe((resp: any) => {
+    (await this._inventoryService.getAllEstablecimientos()).subscribe((resp:any) => {
+      
+      //console.log(resp);
+
       let posicion = 1;
-      this.establecimientos = Object.keys(resp.data).map(a => ({
-        codigo: resp.data[a].id_establecimiento,
+      
+      /*this.establecimientos = resp;
+
+      this.establecimientos.forEach(element => {
+        console.log('establecimiento=>',element);
+      });
+
+      this.dataSource = new MatTableDataSource(this.establecimientos);*/
+
+
+      this.establecimientos = Object.keys(resp).map(a => ({
+        codigo: resp[a].id_establecimiento,
         posicion: posicion++,
-        establecimiento: resp.data[a].establecimiento,
-        provincia: resp.data[a].provincia,
-        distrito: resp.data[a].distrito,
-        tipo_atencion: resp.data[a].tipo_atencion,
-        eod: resp.data[a].eod,
-        tipologia: resp.data[a].tipologia,
+        establecimiento: resp[a].establecimiento,
+        provincia: resp[a].provincia,
+        distrito: resp[a].distrito,
+        tipo_atencion: resp[a].tipo_atencion,
+        eod: resp[a].eod,
+        tipologia: resp[a].tipologia,
       } as IEstablecimientos));
       this.dataSource = new MatTableDataSource(this.establecimientos);
     });
@@ -102,7 +116,9 @@ export class EstablecimientosComponent implements OnInit {
 
 
 
-  abrirEditar(id: number) {
+  abrirEditar(id: string) {
+
+    console.log(id);
 
     const dialogRef = this.dialog.open(EditEstablecimientosComponent, {
 
@@ -132,7 +148,8 @@ export class EstablecimientosComponent implements OnInit {
   
   deleteEstablecimientos(ide: string) {
     this._inventoryService.eliminarEstablecimientos(ide).subscribe((resp: any) => {
-      this._utilService.addMessageSuccess(resp.message, 'Exito');
+      //console.log("entro a respuesta");
+      this._utilService.addMessageSuccess('Registro eliminado correctamente','Éxito');
       this.inicializarData();
     });
   }

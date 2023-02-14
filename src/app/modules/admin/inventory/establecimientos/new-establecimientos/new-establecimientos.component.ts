@@ -64,7 +64,16 @@ export class NewEstablecimientosComponent implements OnInit {
       tipologia: this.formInsert.controls['tipologia'].value,
 
     }
-      this._inventoryService.crearEstablecimientos(establecimiento).subscribe(res =>{
+
+      
+      this._inventoryService.crearEstablecimientos(establecimiento).subscribe((res:any) =>{
+        
+        //console.log(res);
+        if(res.existe) {
+          this.dialogRef.close();
+          this._utilService.addErrorMessage('El establecimiento ya se encuentra registrado',"Error");
+          return;
+        }
       this.dialogRef.close();
       this._utilService.addMessageSuccess('Establecimiento creado correctamente',"Éxito");
     });
@@ -78,7 +87,7 @@ export class NewEstablecimientosComponent implements OnInit {
 	}
 
   closeDialog() {
-    this.dialogRef.close('Cierro!');
+    this.dialogRef.close();
   }
 
 

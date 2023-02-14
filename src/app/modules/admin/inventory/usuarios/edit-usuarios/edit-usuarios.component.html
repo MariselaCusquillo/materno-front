@@ -17,10 +17,12 @@
               
               <div class="col-lg-6 col-sm-12 mr-auto">
                 <div class="form-group">
-                  <label for="InputUser">Usuario:</label>
-                  <input type="text" id="InputUser" class="form-control"
-                    formControlName="user" [ngClass]="{'is-invalid': invalidField('user')}">
-                  <span class="invalid-feedback">Campo obligatorio.</span>
+                  <div class="form-check">
+                    <label for="InputUser">Usuario:</label>
+                    <input type="text" id="InputUser" class="form-control"
+                      formControlName="user" [ngClass]="{'is-invalid': invalidField('user')}">
+                    <span class="invalid-feedback">Campo obligatorio.</span>
+                  </div>
                 </div>
               </div>
   

@@ -3,9 +3,10 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { InventoryService } from '../../../../../services/inventory.service';
 import { UtilService } from '../../../../../services/util.service';
-//import { IDialogData } from '../../products/pages/edit-product/edit-product.component';
 import { functions } from '../../../../../helpers/functions';
 import { IEditEstablecimientos } from 'src/app/interfaces/establecimientos';
+
+interface IDialogData {id: string}
 
 
 @Component({
@@ -48,11 +49,11 @@ export class EditEstablecimientosComponent implements OnInit {
     private _inventoryService: InventoryService,
     public dialogRef: MatDialogRef<EditEstablecimientosComponent>,
     private _utilService: UtilService,
-    //@Inject(MAT_DIALOG_DATA) public data:  IDialogData
+    @Inject(MAT_DIALOG_DATA) public data:  IDialogData
     ) { }
 
   ngOnInit(): void {
-    //this.categoriaById(this.data.id)
+    this.establecimientosById(this.data.id)
 
   }
 
@@ -60,13 +61,14 @@ export class EditEstablecimientosComponent implements OnInit {
   async establecimientosById(ide: string){
     (await this._inventoryService.getEstablecimientosId(ide)).subscribe((resp: any) => {
       
-      this.codigo= resp.data[0].id_establecimiento,
-      this.establecimiento= resp.data[0].establecimiento,
-      this.provincia = resp.data[0].provincia,
-      this.distrito = resp.data[0].distrito,
-      this.tipo_atencion = resp.data[0].tipo_atencion,
-      this.eod = resp.data[0].eod,
-      this.tipologia = resp.data[0].tipologia,
+      //console.log(resp);
+      this.codigo= resp.id_establecimiento,
+      this.establecimiento= resp.establecimiento,
+      this.provincia = resp.provincia,
+      this.distrito = resp.distrito,
+      this.tipo_atencion = resp.tipo_atencion,
+      this.eod = resp.eod,
+      this.tipologia = resp.tipologia,
 
       this.formInsert.patchValue({
         establecimiento:this.establecimiento, 
@@ -117,7 +119,7 @@ export class EditEstablecimientosComponent implements OnInit {
  }
 
  closeDialog() {
-  this.dialogRef.close('Cierro!');
+  this.dialogRef.close();
 }
 
 

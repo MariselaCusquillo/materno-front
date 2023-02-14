@@ -7,6 +7,9 @@ import { UtilService } from '../../../../../services/util.service';
 import { functions } from '../../../../../helpers/functions';
 import { IUpdateUser } from 'src/app/interfaces/usuarios';
 
+//interface IDialogData {id: string}
+
+
 @Component({
   selector: 'app-edit-usuarios',
   templateUrl: './edit-usuarios.component.html',
@@ -63,15 +66,15 @@ export class EditUsuariosComponent {
 
     (await this._inventoryService.getUsuarioId(ide)).subscribe((resp: any) => {
       
-      this.codigo= resp.data[0].id_usuario,
-      this.user= resp.data[0].user,
-      this.tipologia = resp.data[0].tipologia,
-      this.tipo_usuario = resp.data[0].tipo_usuario,
-      this.tipo_atencion = resp.data[0].tipo_atencion,
-      this.establecimiento= resp.data[0].establecimiento,
-      this.provincia = resp.data[0].provincia,
-      this.distrito = resp.data[0].distrito,
-      this.role = resp.data[0].role,
+      this.codigo= resp.id_usuario,
+      this.user= resp.user,
+      this.tipologia = resp.tipologia,
+      this.tipo_usuario = resp.tipo_usuario,
+      this.tipo_atencion = resp.tipo_atencion,
+      this.establecimiento= resp.establecimiento,
+      this.provincia = resp.provincia,
+      this.distrito = resp.distrito,
+      this.role = resp.role,
       
 
       this.formInsert.patchValue({

@@ -33,6 +33,7 @@ export class UsuariosComponent {
     'provincia',
     'distrito',
     'role',
+    'accion'
     ];
 
     //VAriable para definir pantalla
@@ -65,18 +66,19 @@ export class UsuariosComponent {
 
   async inicializarData() {
     (await this._inventoryService.getAllUsuario()).subscribe((resp: any) => {
+      //console.log(resp);
       let posicion = 1;
-      this.usuarios = Object.keys(resp.data).map(a => ({
-        codigo: resp.data[a].id_usuario,
+      this.usuarios = Object.keys(resp).map(a => ({
+        codigo: resp[a].id_usuario,
         posicion: posicion++,
-        user: resp.data[a].user,
-        tipologia: resp.data[a].tipologia,
-        tipo_usuario: resp.data[a].tipo_usuario,
-        tipo_atencion: resp.data[a].tipo_atencion,
-        establecimiento: resp.data[a].establecimiento,
-        provincia: resp.data[a].provincia,
-        distrito: resp.data[a].distrito,
-        role: resp.data[a].role,
+        user: resp[a].user,
+        tipologia: resp[a].tipologia,
+        tipo_usuario: resp[a].tipo_usuario,
+        tipo_atencion: resp[a].tipo_atencion,
+        establecimiento: resp[a].establecimiento,
+        provincia: resp[a].provincia,
+        distrito: resp[a].distrito,
+        role: resp[a].role,
         
       } as IUser));
       this.dataSource = new MatTableDataSource(this.usuarios);
@@ -124,7 +126,7 @@ export class UsuariosComponent {
   
   deleteUsuarios(ide: string) {
     this._inventoryService.eliminarEstablecimientos(ide).subscribe((resp: any) => {
-      this._utilService.addMessageSuccess(resp.message, 'Exito');
+      this._utilService.addMessageSuccess('Registro eliminado correctamente', 'Exito');
       this.inicializarData();
     });
   }

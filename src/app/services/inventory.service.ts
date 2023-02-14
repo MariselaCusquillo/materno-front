@@ -69,6 +69,7 @@ export class InventoryService {
     )
   }
 
+
   /**
    *
    * @param ide 
@@ -174,7 +175,7 @@ getUsuarioId(ide: string) {
     )
   }
 
-  getEstablecimientosId(ide: any) {
+  getEstablecimientosId(ide: string) {
 
     this.spinner.show();
     return this._methodService.get(`establecimientos/buscar/${ide}`).pipe(
@@ -190,9 +191,9 @@ getUsuarioId(ide: string) {
   }
 
   actualizarEstablecimientos(ide: string, establecimientos: IEditEstablecimientos) {
-
+    //console.log(ide, establecimientos);
     this.spinner.show();
-    return this._methodService.post(`establecimientos/update/${ide}`,establecimientos).pipe(
+    return this._methodService.patch(`establecimientos/update/${ide}`,establecimientos).pipe(
       finalize(() => this.spinner.hide()),
       map(resp => {
         return resp;

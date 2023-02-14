@@ -111,9 +111,10 @@ export class UtilService {
     return typeof variable !== 'undefined' && variable !== null;
   }
 
-  getUserUid(): number {
+  getUserUid(): string {
     const token = this.decodeToken();
-    return token.sub || -1;
+    //console.log('token=>',token);
+    return token.id_usuario  || -1;
   }
   
   getUsername(): string {

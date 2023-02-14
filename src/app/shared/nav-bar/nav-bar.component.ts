@@ -30,7 +30,7 @@ export class NavBarComponent implements OnInit {
   async getDataUser(ide: string | any){
       (await this._securityService.getUserId(ide)).subscribe((resp: any) => {
 
-        this.user = resp[0].user;
+        this.user = resp.user;
         /*this.tipologia = resp[0].tipologia;
         this.tipo_atencion =  resp[0].tipo_atencion;
         this.establecimiento = resp[0].establecimiento;

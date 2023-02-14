@@ -17,10 +17,12 @@
             
             <div class="col-lg-6 col-sm-12 mr-auto">
               <div class="form-group">
-                <label for="InputEstablecimiento">Nombre del establecimiento:</label>
-                <input type="text" id="InputEstablecimiento" class="form-control"
-                  formControlName="establecimiento" [ngClass]="{'is-invalid': invalidField('establecimiento')}">
-                <span class="invalid-feedback">Campo obligatorio.</span>
+                <div class="form-check">
+                  <label for="InputEstablecimiento">Nombre del establecimiento:</label>
+                    <input type="text" id="InputEstablecimiento" class="form-control"
+                      formControlName="establecimiento" [ngClass]="{'is-invalid': invalidField('establecimiento')}">
+                    <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
               </div>
             </div>
 

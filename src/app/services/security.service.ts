@@ -63,7 +63,7 @@ export class SecurityService {
     );
   }
 
-  actualizarContrasena(ide: number, changePassword: IChangePassword) {
+  actualizarContrasena(ide: string, changePassword: IChangePassword) {
 
     this.spinner.show();
     return this._methodService.post(`user/actualizar-contrasena/${ide}`,changePassword).pipe(

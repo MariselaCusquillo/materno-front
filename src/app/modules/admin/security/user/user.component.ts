@@ -66,6 +66,13 @@ export class UserComponent implements OnInit {
    this.password = this.formInsert.controls['password'].value;
 
      this._securityService.crearUsuario(user).subscribe(async (res: any) =>{
+
+      //console.log(res);
+      if(res.existe) {
+        this._utilService.addErrorMessage('El establecimiento ya se encuentra registrado',"Error");
+        return;
+      }
+      
       this._utilService.addMessageSuccess(`Usuario creado <br>Nombre de usuario es: <strong style='color: red;'> ${this.user}</strong> <br> Contraseña del usuario es <strong style='color: red;'> ${this.password}</strong>`,'Exito')
     });
 

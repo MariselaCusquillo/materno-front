@@ -63,7 +63,7 @@ export class ChangePasswordComponent implements OnInit {
    }
 
     const codigo = await this._utilService.getUserUid();
-    this._securityService.actualizarContrasena(Number(codigo),password).subscribe(async (res: any) =>{
+    this._securityService.actualizarContrasena(String(codigo),password).subscribe(async (res: any) =>{
       if(res.success){
 
        await this._utilService.confirmBeforeSucces("Por su seguridad ¿Desea cerrar sesión?",()=> this.logout(),"Contraseña actualizada")

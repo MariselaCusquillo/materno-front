@@ -50,14 +50,15 @@ export class ProfileComponent implements OnInit {
 
   async getUserId(ide: string | any){
     (await this._securityService.getUserId(ide)).subscribe((resp: any) => {
-      this.codigo= resp[0].ide_segusu,
-      this.user= resp[0].user,
-      this.tipologia = resp[0].tipologia,
-      this.tipo_usuario = resp[0].tipo_usuario,
-      this.tipo_atencion = resp[0].tipo_atencion,
-      this.establecimiento = resp[0].establecimiento,
-      this.provincia = resp[0].provincia,
-      this.distrito = resp[0].distrito,
+      //console.log(resp);
+      this.codigo= resp.id_usuario,
+      this.user= resp.user,
+      this.tipologia = resp.tipologia,
+      this.tipo_usuario = resp.tipo_usuario,
+      this.tipo_atencion = resp.tipo_atencion,
+      this.establecimiento = resp.establecimiento,
+      this.provincia = resp.provincia,
+      this.distrito = resp.distrito,
 
       this.formInsert.patchValue({user:this.user, tipologia:this.tipologia, tipo_usuario: this.tipo_usuario,
                                 tipo_atencion:this.tipo_atencion, establecimiento:this.establecimiento, provincia: this.provincia, 
@@ -97,7 +98,7 @@ export class ProfileComponent implements OnInit {
 
    this._securityService.actualizarDatos(String(this.codigo),user).subscribe(res =>{
 
-     this._utilService.addMessageSuccess('Dactos actualizados correctamente',"Exito");
+     this._utilService.addMessageSuccess('Datos actualizados correctamente',"Éxito");
 
    });
 
