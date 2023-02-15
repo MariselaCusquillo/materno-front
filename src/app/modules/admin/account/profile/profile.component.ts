@@ -89,16 +89,11 @@ export class ProfileComponent implements OnInit {
     tipo_atencion: this.formInsert.controls['tipo_atencion'].value,
     establecimiento: this.formInsert.controls['establecimiento'].value,
     provincia: this.formInsert.controls['provincia'].value,
-    distrito: this.formInsert.controls['distrito'].value
-    
+    distrito: this.formInsert.controls['distrito'].value 
   }
-
-
-
-
-   this._securityService.actualizarDatos(String(this.codigo),user).subscribe(res =>{
-
-     this._utilService.addMessageSuccess('Datos actualizados correctamente',"Éxito");
+    
+  this._securityService.actualizarDatos(String(this.codigo),user).subscribe(res =>{
+  this._utilService.addMessageSuccess('Datos actualizados correctamente',"Éxito");
 
    });
 

@@ -20,7 +20,7 @@ export class UserComponent implements OnInit {
   public formInsert = this._form.group({
 
     user: ['', [Validators.required]],
-    password: ['', [Validators.required]],
+    password: ['', [Validators.required, Validators.minLength(10)]],
     tipologia: ['', [Validators.required]],
     tipo_usuario: ['', [Validators.required]],
     tipo_atencion: ['', [Validators.required]],
@@ -60,6 +60,7 @@ export class UserComponent implements OnInit {
      provincia: this.formInsert.controls['provincia'].value,
      distrito: this.formInsert.controls['distrito'].value,
      role: this.formInsert.controls['role'].value,
+     
    }
 
    this.user = this.formInsert.controls['user'].value;
@@ -69,14 +70,18 @@ export class UserComponent implements OnInit {
 
       //console.log(res);
       if(res.existe) {
-        this._utilService.addErrorMessage('El establecimiento ya se encuentra registrado',"Error");
+        this._utilService.addErrorMessage('El usuario ya se encuentra registrado',"Error");
         return;
       }
+
+      this._utilService.addMessageSuccess(`Usuario creado <br>Usuario: <strong style='color: red;'> ${this.user}</strong> <br> Contraseña: <strong style='color: red;'> ${this.password}</strong>`,'Exito')
+      this.formInsert.reset();
       
-      this._utilService.addMessageSuccess(`Usuario creado <br>Nombre de usuario es: <strong style='color: red;'> ${this.user}</strong> <br> Contraseña del usuario es <strong style='color: red;'> ${this.password}</strong>`,'Exito')
     });
 
   }
+
+  
 
   getErrorMessage(campo: string, campo2?: string){
     let message;

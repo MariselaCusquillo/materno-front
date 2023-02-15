@@ -20,6 +20,8 @@ export class UsuariosComponent {
 
   //array que almacenaproductos
   usuarios: IUser[] = [];
+
+  loadData: boolean = false;
   
 
   //columnas tabla
@@ -41,6 +43,9 @@ export class UsuariosComponent {
   
   //variable global para  mostrar tabla
   dataSource!: MatTableDataSource<IUser>;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
 
   constructor(
     private _inventoryService: InventoryService,
@@ -65,6 +70,7 @@ export class UsuariosComponent {
 
 
   async inicializarData() {
+    this.loadData = true;
     (await this._inventoryService.getAllUsuario()).subscribe((resp: any) => {
       //console.log(resp);
       let posicion = 1;
@@ -82,6 +88,12 @@ export class UsuariosComponent {
         
       } as IUser));
       this.dataSource = new MatTableDataSource(this.usuarios);
+
+      this.dataSource.paginator = this.paginator;
+
+      this.dataSource.sort = this.sort;
+      this.loadData = false;
+      
     });
 
   }
@@ -125,7 +137,7 @@ export class UsuariosComponent {
   }
   
   deleteUsuarios(ide: string) {
-    this._inventoryService.eliminarEstablecimientos(ide).subscribe((resp: any) => {
+    this._inventoryService.eliminarUsario(ide).subscribe((resp: any) => {
       this._utilService.addMessageSuccess('Registro eliminado correctamente', 'Exito');
       this.inicializarData();
     });

@@ -22,7 +22,7 @@ export class EstablecimientosComponent implements OnInit {
   //array que almacenaproductos
   establecimientos: IEstablecimientos[] = [];
   
-  //imagen temporal
+  loadData: boolean = false;
 
   //columnas tabla
   displayedColumns: string[] = [
@@ -42,6 +42,8 @@ export class EstablecimientosComponent implements OnInit {
   
   //variable global para  mostrar tabla
   dataSource!: MatTableDataSource<IEstablecimientos>;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
     private _inventoryService: InventoryService,
@@ -66,6 +68,7 @@ export class EstablecimientosComponent implements OnInit {
 
 
   async inicializarData() {
+    this.loadData = true;
     (await this._inventoryService.getAllEstablecimientos()).subscribe((resp:any) => {
       
       //console.log(resp);
@@ -92,6 +95,11 @@ export class EstablecimientosComponent implements OnInit {
         tipologia: resp[a].tipologia,
       } as IEstablecimientos));
       this.dataSource = new MatTableDataSource(this.establecimientos);
+
+      this.dataSource.paginator = this.paginator;
+
+      this.dataSource.sort = this.sort;
+      this.loadData = false;
     });
 
   }
@@ -118,7 +126,7 @@ export class EstablecimientosComponent implements OnInit {
 
   abrirEditar(id: string) {
 
-    console.log(id);
+    //console.log(id);
 
     const dialogRef = this.dialog.open(EditEstablecimientosComponent, {
 

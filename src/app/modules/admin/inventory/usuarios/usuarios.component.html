@@ -93,7 +93,7 @@
                 </button>
                 <button
                 class="btn btn-sm btn-danger"
-                (click)="delete(element.codigo, element.usuario)"
+                (click)="delete(element.codigo, element.user)"
                 >
                   <i class="fas fa-trash"></i>
                 </button>
@@ -110,6 +110,14 @@
   
           </div>
         </div>
+
+        <div class="card-footer bg-white " [hidden]="loadData">
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons 
+           aria-label="Select page of periodic elements">
+  
+          </mat-paginator>
+        </div>
+        
   
       </div>
       <!-- /.card -->

@@ -82,7 +82,7 @@ export class SecurityService {
   actualizarDatos(id: string, userData: IChangeDataUser) {
 
     this.spinner.show();
-    return this._methodService.post(`user/update/${id}`,userData).pipe(
+    return this._methodService.patch(`user/update/${id}`,userData).pipe(
       finalize(() => this.spinner.hide()),
       map(resp => {
         return resp;

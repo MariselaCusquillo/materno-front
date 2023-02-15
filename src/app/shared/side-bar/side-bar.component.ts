@@ -21,7 +21,7 @@ export class SideBarComponent implements OnInit {
     this.getDataUser(ide);
   }
 
-  async getDataUser(ide: number | any){
+  async getDataUser(ide: string | any){
       (await this._securityService.getUserId(ide)).subscribe((resp: any) => {
         this.user = resp.user;
       });

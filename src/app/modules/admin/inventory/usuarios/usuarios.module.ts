@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { EditUsuariosComponent } from './edit-usuarios/edit-usuarios.component';
 
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { EditUsuariosComponent } from './edit-usuarios/edit-usuarios.component';
     MatTableModule,
     MatDialogModule,
     ReactiveFormsModule,
+    MatPaginatorModule
   ]
 })
 export class UsuariosModule { }

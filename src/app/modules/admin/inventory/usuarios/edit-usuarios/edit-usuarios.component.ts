@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { InventoryService } from '../../../../../services/inventory.service';
@@ -7,7 +8,8 @@ import { UtilService } from '../../../../../services/util.service';
 import { functions } from '../../../../../helpers/functions';
 import { IUpdateUser } from 'src/app/interfaces/usuarios';
 
-//interface IDialogData {id: string}
+interface IDialogData {id: string}
+
 
 
 @Component({
@@ -53,11 +55,11 @@ export class EditUsuariosComponent {
     private _inventoryService: InventoryService,
     public dialogRef: MatDialogRef<EditUsuariosComponent>,
     private _utilService: UtilService,
-    //@Inject(MAT_DIALOG_DATA) public data:  IDialogData
+    @Inject(MAT_DIALOG_DATA) public data:  IDialogData
     ) { }
 
   ngOnInit(): void {
-    //this.usuariosById(this.data.id)
+    this.usuariosById(this.data.id)
 
   }
 
@@ -119,7 +121,6 @@ export class EditUsuariosComponent {
     role: this.formInsert.controls['role'].value,
      
    }
-
 
     this._inventoryService.actualizarUsuario(String(this.codigo),usuario).subscribe(res =>{
      this.dialogRef.close();

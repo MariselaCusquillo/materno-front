@@ -9,6 +9,9 @@ import { NewEstablecimientosComponent } from './new-establecimientos/new-estable
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
+
 
 import { EditEstablecimientosComponent } from './edit-establecimientos/edit-establecimientos.component';
 
@@ -27,6 +30,7 @@ import { EditEstablecimientosComponent } from './edit-establecimientos/edit-esta
     MatTableModule,
     MatDialogModule,
     ReactiveFormsModule,
+    MatPaginatorModule
   ]
 })
 export class EstablecimientosModule { }

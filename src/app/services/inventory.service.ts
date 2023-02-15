@@ -43,7 +43,7 @@ export class InventoryService {
    *
    * @returns 
    */
-  getEstablecimientosDrop() {
+  /*getEstablecimientosDrop() {
     return this._methodService.get('establecimientos/listar').pipe(
       map((resp) => {
         return resp as IResultData;
@@ -53,7 +53,7 @@ export class InventoryService {
         return throwError(err);
       })
     );
-  }
+  }*/
 
   crearUsario(usuario: any) {
     this.spinner.show();
