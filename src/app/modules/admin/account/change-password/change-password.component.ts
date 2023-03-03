@@ -52,10 +52,6 @@ export class ChangePasswordComponent implements OnInit {
 
     }
 
-
-
-
-   //Verifico si cambio imagen presentacion
    const password: IChangePassword ={
      oldPassword: this.formInsert.controls['oldPassword'].value,
      newPassword: this.formInsert.controls['newPassword'].value,
@@ -64,12 +60,12 @@ export class ChangePasswordComponent implements OnInit {
 
     const codigo = await this._utilService.getUserUid();
     this._securityService.actualizarContrasena(String(codigo),password).subscribe(async (res: any) =>{
-      if(res.success){
+      if(res.status){
 
        await this._utilService.confirmBeforeSucces("Por su seguridad ¿Desea cerrar sesión?",()=> this.logout(),"Contraseña actualizada")
 
       }else{
-        this._utilService.addMessageInfo("Usuario y contraseña no coinciden","Advertencia")
+        this._utilService.addMessageInfo(res.message,"Advertencia")
       }
 
     });

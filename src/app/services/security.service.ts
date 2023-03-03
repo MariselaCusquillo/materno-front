@@ -66,7 +66,7 @@ export class SecurityService {
   actualizarContrasena(ide: string, changePassword: IChangePassword) {
 
     this.spinner.show();
-    return this._methodService.post(`user/actualizar-contrasena/${ide}`,changePassword).pipe(
+    return this._methodService.patch(`user/change-password/${ide}`,changePassword).pipe(
       finalize(() => this.spinner.hide()),
       map(resp => {
         return resp;
@@ -76,6 +76,7 @@ export class SecurityService {
         return throwError(err);
       })
     )
+    
   }
 
 

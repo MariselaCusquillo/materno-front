@@ -119,7 +119,8 @@ export class UtilService {
   
   getUsername(): string {
     const token = this.decodeToken();
-    return token.use || -1;
+    //use
+    return token.user || -1;
   }
 
     /**
