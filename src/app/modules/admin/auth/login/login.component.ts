@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
      private _utilService:UtilService) {
       this.signInForm = this.form.group({
 
-        user: ['maria', Validators.required],
-        password: ['maria12', Validators.required]
+        user: ['', Validators.required],
+        password: ['', Validators.required]
 
       })
      }

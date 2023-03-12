@@ -19,8 +19,20 @@
             <div class="col-lg-6 col-sm-12 mr-auto">
               <div class="form-group">
                 <div class="form-check">
+                  <label for="InputUnicodigo">Unicódigo:</label>
+                  <input type="number" id="InputUnicodigo" class="form-control" 
+                  formControlName="unicodigo" [ngClass]="{'is-invalid': invalidField('unicodigo')}">
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
                   <label for="InputEstablecimiento">Nombre del establecimiento:</label>
-                  <input type="text" id="InputEstablecimiento" class="form-control"
+                  <input type="text" id="InputEstablecimiento" class="form-control text-uppercase"
                   formControlName="establecimiento" [ngClass]="{'is-invalid': invalidField('establecimiento')}">
                   <span class="invalid-feedback">Campo obligatorio.</span>
                 </div>
@@ -31,7 +43,7 @@
               <div class="form-group">
                 <div class="form-check">
                   <label for="InputProvincia">Provincia:</label>
-                  <input type="text" id="InputProvincia" class="form-control"
+                  <input type="text" id="InputProvincia" class="form-control text-uppercase"
                     formControlName="provincia" [ngClass]="{'is-invalid': invalidField('provincia')}">
                   <span class="invalid-feedback">Campo obligatorío</span>
                 </div>
@@ -41,8 +53,31 @@
             <div class="col-lg-6 col-sm-12 mr-auto">
               <div class="form-group">
                 <div class="form-check">
+                  <label for="InputCanton">Cantón:</label>
+                  <input type="text" id="InputCanton" class="form-control text-uppercase"
+                    formControlName="canton" [ngClass]="{'is-invalid': invalidField('canton')}">
+                  <span class="invalid-feedback">Campo obligatorío</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputParroquia">Parroquia:</label>
+                  <input type="text" id="InputParroquia" class="form-control text-uppercase"
+                    formControlName="parroquia" [ngClass]="{'is-invalid': invalidField('parroquia')}">
+                  <span class="invalid-feedback">Campo obligatorío</span>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
                   <label for="InputDistrito">Distrito:</label>
-                  <input type="text" id="InputDistrito" class="form-control"
+                  <input type="text" id="InputDistrito" class="form-control text-uppercase"
                     formControlName="distrito" [ngClass]="{'is-invalid': invalidField('distrito')}">
                   <span class="invalid-feedback">Campo obligatorío</span>
                 </div>
@@ -53,8 +88,8 @@
             <div class="col-lg-6 col-sm-12 mr-auto">
               <div class="form-group">
                 <div class="form-check">
-                  <label for="InputTipoAtencion">Tipo de Atención:</label>
-                  <input type="text" id="InputTipoAtencion" class="form-control"
+                  <label for="InputTipoAtencion">Nivel de Atención:</label>
+                  <input type="text" id="InputTipoAtencion" class="form-control text-uppercase"
                     formControlName="tipo_atencion" [ngClass]="{'is-invalid': invalidField('tipo_atencion')}">
                   <span class="invalid-feedback">Campo obligatorío</span>
                 </div>
@@ -65,7 +100,7 @@
               <div class="form-group">
                 <div class="form-check">
                   <label for="InputEod">EOD:</label>
-                  <input type="text" id="InputEod" class="form-control"
+                  <input type="text" id="InputEod" class="form-control text-uppercase"
                     formControlName="eod" [ngClass]="{'is-invalid': invalidField('eod')}">
                   <span class="invalid-feedback">Campo obligatorío</span>
                 </div>
@@ -76,7 +111,7 @@
               <div class="form-group">
                 <div class="form-check">
                   <label for="InputTipologia">Tipologia:</label>
-                  <input type="text" id="InputTipologia" class="form-control"
+                  <input type="text" id="InputTipologia" class="form-control text-uppercase"
                     formControlName="tipologia" [ngClass]="{'is-invalid': invalidField('tipologia')}">
                   <span class="invalid-feedback">Campo obligatorío</span>
                 </div>
@@ -97,6 +132,7 @@
 
 
     </div>
+    
 
   </mat-dialog-content>
 

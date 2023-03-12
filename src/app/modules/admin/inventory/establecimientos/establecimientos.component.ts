@@ -27,8 +27,11 @@ export class EstablecimientosComponent implements OnInit {
   //columnas tabla
   displayedColumns: string[] = [
     'posicion',
+    'unicodigo',
     'establecimiento',
     'provincia',
+    'canton',
+    'parroquia',
     'distrito',
     'tipo_atencion',
     'eod',
@@ -87,8 +90,11 @@ export class EstablecimientosComponent implements OnInit {
       this.establecimientos = Object.keys(resp).map(a => ({
         codigo: resp[a].id_establecimiento,
         posicion: posicion++,
+        unicodigo: resp[a].unicodigo,
         establecimiento: resp[a].establecimiento,
         provincia: resp[a].provincia,
+        canton: resp[a].canton,
+        parroquia: resp[a].parroquia,
         distrito: resp[a].distrito,
         tipo_atencion: resp[a].tipo_atencion,
         eod: resp[a].eod,

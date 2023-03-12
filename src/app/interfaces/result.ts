@@ -1,3 +1,7 @@
+
+//
+export type Roles = 'Medico' | 'Admin';
+
 export interface IResultAuth {
     success: boolean;
     message: string;
@@ -5,7 +9,9 @@ export interface IResultAuth {
     user?: any;
     accessDate?: any;
     uid: string;
-    //uid: number;
+    //
+    role: Roles
+    
   }
   
   export interface IResultData {

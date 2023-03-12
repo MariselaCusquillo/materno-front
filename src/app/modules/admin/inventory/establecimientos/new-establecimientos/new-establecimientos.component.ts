@@ -24,12 +24,15 @@ export class NewEstablecimientosComponent implements OnInit {
 
   public formInsert = this._form.group({
 
-    establecimiento: ['', [Validators.required]],
-    provincia: ['', [Validators.required]],
-    distrito: ['',[Validators.required]],
-    tipo_atencion: ['',[Validators.required]],
-    eod: ['',[Validators.required]],
-    tipologia: ['',[Validators.required]],
+    unicodigo: [,[Validators.required]],
+    establecimiento: [, [Validators.required]],
+    provincia: [, [Validators.required]],
+    canton: [, [Validators.required]],
+    parroquia: [, [Validators.required]],
+    distrito: [,[Validators.required]],
+    tipo_atencion: [,[Validators.required]],
+    eod: [,[Validators.required]],
+    tipologia: [,[Validators.required]],
 
   })
 
@@ -56,8 +59,11 @@ export class NewEstablecimientosComponent implements OnInit {
 
     const establecimiento: INewEstablecimientos ={
 
+      unicodigo: this.formInsert.controls['unicodigo'].value,
       establecimiento: this.formInsert.controls['establecimiento'].value,
       provincia: this.formInsert.controls['provincia'].value,
+      canton: this.formInsert.controls['canton'].value,
+      parroquia: this.formInsert.controls['parroquia'].value,
       distrito: this.formInsert.controls['distrito'].value,
       tipo_atencion: this.formInsert.controls['tipo_atencion'].value,
       eod: this.formInsert.controls['eod'].value,
@@ -65,10 +71,11 @@ export class NewEstablecimientosComponent implements OnInit {
 
     }
 
-      
+      console.log(establecimiento);
       this._inventoryService.crearEstablecimientos(establecimiento).subscribe((res:any) =>{
+
         
-        //console.log(res);
+        console.log('res=>',res);
         if(res.existe) {
           this.dialogRef.close();
           this._utilService.addErrorMessage('El establecimiento ya se encuentra registrado',"Error");

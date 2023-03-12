@@ -24,8 +24,11 @@ export class EditEstablecimientosComponent implements OnInit {
   //Variables
 
   codigo='';
+  unicodigo ='';
   establecimiento='';
   provincia='';
+  canton='';
+  parroquia='';
   distrito='';
   tipo_atencion='';
   eod='';
@@ -34,8 +37,11 @@ export class EditEstablecimientosComponent implements OnInit {
 
   public formInsert = this._form.group({
 
+    unicodigo: ['',[Validators.required]],
     establecimiento: ['', [Validators.required]],
     provincia: ['', [Validators.required]],
+    canton : ['', [Validators.required]],
+    parroquia: ['', [Validators.required]],
     distrito: ['',[Validators.required]],
     tipo_atencion: ['',[Validators.required]],
     eod: ['',[Validators.required]],
@@ -63,16 +69,22 @@ export class EditEstablecimientosComponent implements OnInit {
       
       //console.log(resp);
       this.codigo= resp.id_establecimiento,
+      this.unicodigo= resp.unicodigo,
       this.establecimiento= resp.establecimiento,
       this.provincia = resp.provincia,
+      this.canton = resp.canton,
+      this.parroquia= resp.parroquia,
       this.distrito = resp.distrito,
       this.tipo_atencion = resp.tipo_atencion,
       this.eod = resp.eod,
       this.tipologia = resp.tipologia,
 
       this.formInsert.patchValue({
+        unicodigo: this.unicodigo,
         establecimiento:this.establecimiento, 
         provincia:this.provincia, 
+        canton: this.canton,
+        parroquia: this.parroquia,
         distrito: this.distrito,
         tipo_atencion: this.tipo_atencion,
         eod: this.eod,
@@ -98,21 +110,23 @@ export class EditEstablecimientosComponent implements OnInit {
    }
 
    const establecimiento: IEditEstablecimientos ={
-     
-    establecimiento: this.formInsert.controls['establecimiento'].value,
+
+     unicodigo: this.formInsert.controls['unicodigo'].value,
+     establecimiento: this.formInsert.controls['establecimiento'].value,
      provincia: this.formInsert.controls['provincia'].value,
+     canton: this.formInsert.controls['canton'].value,
+     parroquia: this.formInsert.controls['parroquia'].value,
      distrito: this.formInsert.controls['distrito'].value,
      tipo_atencion: this.formInsert.controls['tipo_atencion'].value,
      eod: this.formInsert.controls['eod'].value,
      tipologia: this.formInsert.controls['tipologia'].value,
-
-
+     
    }
 
 
     this._inventoryService.actualizarEstablecimientos(String(this.codigo),establecimiento).subscribe(res =>{
      this.dialogRef.close();
-     this._utilService.addMessageSuccess('Establecimiento actualizado correctamente',"Exito");
+     this._utilService.addMessageSuccess('Registro actualizado correctamente',"Exito");
 
    });
 

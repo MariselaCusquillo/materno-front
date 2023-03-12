@@ -36,17 +36,6 @@ export class AuthGuard implements CanActivate {
           localStorage.clear();
         }
 
-       /* this.http.get(`${this.API_URL}/auth/validate-token/${user}/${username}`).subscribe(
-          resp=>{
-            resolve(true);
-          },
-           err =>{
-             localStorage.removeItem("accessToken");
-             localStorage.removeItem("tokenValidate");
-            this.router.navigate(['/']);
-            resolve(false);
-          }
-        )*/
       }else{
         this.router.navigate(['/']);
         resolve(false);

@@ -11,7 +11,7 @@
           <form autocomplete="off" [formGroup]="formInsert" (ngSubmit)="save()" >
 
            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Nombre de usuario" formControlName="user">
+              <input type="text" class="form-control text-uppercase" placeholder="Nombre de usuario" formControlName="user">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-user"></span>
@@ -21,7 +21,7 @@
             <small class="text-danger mb-2" *ngIf="isInvalidField('user')">{{getErrorMessage('user')}}</small>
 
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Contraseña" formControlName="password">
+              <input type="password" class="form-control" placeholder="CONTRASEÑA" formControlName="password">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-lock"></span> 
@@ -31,7 +31,7 @@
             <small class="text-danger mb-2" *ngIf="isInvalidField('password')">{{getErrorMessage('password')}}</small>
 
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Tipología" formControlName="tipologia">
+              <input type="text" class="form-control text-uppercase" placeholder="Tipología" formControlName="tipologia">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-layer-group"></span>
@@ -41,7 +41,7 @@
             <small class="text-danger mb-2" *ngIf="isInvalidField('tipologia')">{{getErrorMessage('tipologia')}}</small>
 
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Tipo de usuario" formControlName="tipo_usuario">
+              <input type="text" class="form-control" placeholder="TIPO DE USUARIO" formControlName="tipo_usuario">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-users-cog"></span>
@@ -51,7 +51,7 @@
             <small class="text-danger mb-2" *ngIf="isInvalidField('tipo_usuario')">{{getErrorMessage('tipo_usuario')}}</small>
 
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Tipo de atención" formControlName="tipo_atencion">
+              <input type="text" class="form-control text-uppercase" placeholder="Nivel de atención" formControlName="tipo_atencion">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-street-view"></span>
@@ -61,7 +61,7 @@
             <small class="text-danger mb-2" *ngIf="isInvalidField('tipo_atencion')">{{getErrorMessage('tipo_atencion')}}</small>
 
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Establecimiento" formControlName="establecimiento">
+              <input type="text" class="form-control text-uppercase" placeholder="Establecimiento" formControlName="establecimiento">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-warehouse"></span>
@@ -72,7 +72,7 @@
 
     
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Provincia" formControlName="provincia">
+              <input type="text" class="form-control text-uppercase" placeholder="Provincia" formControlName="provincia">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fa fa-map"></span>
@@ -83,7 +83,7 @@
 
 
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Distrito" formControlName="distrito">
+              <input type="text" class="form-control text-uppercase" placeholder="Distrito" formControlName="distrito">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fa fa-location-arrow"></span>
@@ -93,7 +93,7 @@
             <small class="text-danger mb-2" *ngIf="isInvalidField('distrito')">{{getErrorMessage('distrito')}}</small>
 
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Rol" formControlName="role">
+              <input type="text" class="form-control text-uppercase"  placeholder="Rol" formControlName="role">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-user-tag"></span>

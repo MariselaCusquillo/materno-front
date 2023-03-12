@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { IUpdateUser } from '../interfaces/usuarios';
-import { IEstablecimientos, IEditEstablecimientos } from '../interfaces/establecimientos';
+import { IEstablecimientos, IEditEstablecimientos, INewEstablecimientos } from '../interfaces/establecimientos';
 
 @Injectable({
   providedIn: 'root'
@@ -160,8 +160,8 @@ getUsuarioId(ide: string) {
     )
   }
 
-  crearEstablecimientos(establecimientos: any) {
-
+  crearEstablecimientos(establecimientos: INewEstablecimientos) {
+    console.log('datos=>',establecimientos);
     this.spinner.show();
     return this._methodService.post('establecimientos/crear', establecimientos).pipe(
       finalize(() => this.spinner.hide()),
@@ -170,7 +170,8 @@ getUsuarioId(ide: string) {
       }),
       catchError(err => {
         this._utilService.addErrorMessage(err.message, 'Error');
-        return throwError(err);
+        console.log('error=>',err);
+        return throwError (err);
       })
     )
   }

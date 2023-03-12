@@ -11,8 +11,11 @@ export interface IEstablecimientos {
 
 export interface INewEstablecimientos {
 
+  unicodigo: number | any,
   establecimiento:string  | any,
   provincia:string  | any,
+  canton: string | any,
+  parroquia: string | any,
   distrito: string  | any,
   tipo_atencion: string  | any,
   eod:string  | any,
@@ -21,8 +24,12 @@ export interface INewEstablecimientos {
 
 
 export interface IEditEstablecimientos {
+
+  unicodigo: number | any,
   establecimiento:string | any,
   provincia:string  | any,
+  canton: string | any,
+  parroquia: string | any,
   distrito: string  | any,
   tipo_atencion: string  | any,
   eod:string  | any,
