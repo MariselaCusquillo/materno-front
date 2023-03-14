@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   descripcion='';
   urlIcono='';
   country='';
+  role: any;
 
   constructor(private _securityService: SecurityService) { }
 
@@ -27,6 +28,7 @@ export class HomeComponent implements OnInit {
     this.obtenerIdNavegador();
     this.getApi();
     this.getClima();
+    this.role = localStorage.getItem("role");
     setTimeout(this.logout,1800000)
   }
 

@@ -11,6 +11,7 @@ import { UtilService } from '../../services/util.service';
 export class SideBarComponent implements OnInit {
 
   user='';
+  role: any;
 
   constructor(private router: Router,
     private _securityService: SecurityService,
@@ -19,6 +20,8 @@ export class SideBarComponent implements OnInit {
  async ngOnInit() {
     const ide = await this._utilService.getUserUid();
     this.getDataUser(ide);
+    this.role = localStorage.getItem("role");
+    console.log(this.role =='admin', this.role, 'admin');
   }
 
   async getDataUser(ide: string | any){

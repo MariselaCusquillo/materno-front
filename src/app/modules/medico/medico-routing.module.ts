@@ -17,8 +17,8 @@ const routes: Routes = [
     children: [
       
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      {path:'home', loadChildren: ()=> import('./home/home.module').then(m=>m.HomeModule)},
-      {path:'**', pathMatch:'full',loadChildren:()=> import('./error404/error404.module').then(m=>m.Error404Module)},
+      {path:'indicadores', loadChildren: ()=> import('./indicadores/indicadores.module').then(m=>m.IndicadoresModule)},
+      {path:'indicador1', loadChildren: ()=> import('./indicador1/indicador1.module').then(m=>m.Indicador1Module)}
     ]
   },
   {path:'', redirectTo:'',pathMatch:'full'},

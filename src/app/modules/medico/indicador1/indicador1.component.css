@@ -1,0 +1,66 @@
+#content {
+    padding: 10px; 
+}
+p{
+    text-align: justify;
+}
+
+h2{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-style:initial;
+    font-weight: bold;
+}
+
+h3{
+    font-family: 'Courier New', Courier, monospace;
+    font-style:initial;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(233, 233, 233);
+}
+
+
+h4{
+    font-family: 'Courier New', Courier, monospace;
+    font-style:initial;
+    font-weight: bold;
+    text-align: left;
+    font-size: small;
+    background-color: rgb(250, 166, 243);
+}
+
+
+h5{
+    font-family: 'Courier New', Courier, monospace;
+    font-style:initial;
+    font-weight: bold;
+    text-align: left;
+    font-size: small;
+    background-color: #AED6F1;
+}
+
+h6{
+    font-family: 'Courier New', Courier, monospace;
+    font-style:initial;
+    font-weight: bold;
+    text-align: left;
+    font-size: small;
+    background-color: #38e47a9a;
+}
+
+
+#inst{
+    text-align: justify;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#th{
+    
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+}
+
+button.center{
+    text-align: center;
+}

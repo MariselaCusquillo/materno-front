@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { SecurityService } from '../../services/security.service';
 import { UtilService } from '../../services/util.service';
 
@@ -11,6 +12,7 @@ import { UtilService } from '../../services/util.service';
 export class NavBarComponent implements OnInit {
 
   user='';
+  role: any;
   /*tipologia:'';
   tipo_usuario:'';
   tipo_atencion:'';
@@ -20,11 +22,14 @@ export class NavBarComponent implements OnInit {
 
   constructor(private router: Router,
     private _securityService: SecurityService,
-    private _utilService: UtilService) { }
+    private _utilService: UtilService,
+    private _authService: AuthService
+    ) { }
 
  async ngOnInit() {
     const ide = await this._utilService.getUserUid();
     this.getDataUser(ide);
+    
   }
 
   async getDataUser(ide: string | any){
@@ -45,4 +50,9 @@ export class NavBarComponent implements OnInit {
     localStorage.clear();
   }
 
+  validationRole (): boolean{
+    this.role = localStorage.getItem("role");
+    return (this.role === "admin");
+    
+  }
 }

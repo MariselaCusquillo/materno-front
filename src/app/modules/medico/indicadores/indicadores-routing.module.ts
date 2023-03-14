@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Error404Component } from './error404.component';
 
 const routes: Routes = [
-  {path:'',component:Error404Component}
+  {path:'indicadores', loadChildren: ()=> import('./indicadores.module').then(m=>m.IndicadoresModule)}
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class Error404RoutingModule { }
+export class IndicadoresRoutingModule { }

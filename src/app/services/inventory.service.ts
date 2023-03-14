@@ -9,6 +9,7 @@ import { environment } from '../../environments/environment';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { IUpdateUser } from '../interfaces/usuarios';
 import { IEstablecimientos, IEditEstablecimientos, INewEstablecimientos } from '../interfaces/establecimientos';
+import { INewIndicador1 } from '../interfaces/indicador1';
 
 @Injectable({
   providedIn: 'root'
@@ -202,6 +203,24 @@ getUsuarioId(ide: string) {
       catchError(err => {
         this._utilService.addErrorMessage(err.message, 'Error');
         return throwError(err);
+      })
+    )
+  }
+
+  //indicadores
+
+  crearIndicador1(indicador1: INewIndicador1) {
+    
+    this.spinner.show();
+    return this._methodService.post('indicador1/crear', indicador1).pipe(
+      finalize(() => this.spinner.hide()),
+      map(resp => {
+        return resp;
+      }),
+      catchError(err => {
+        this._utilService.addErrorMessage(err.message, 'Error');
+        console.log('error=>',err);
+        return throwError (err);
       })
     )
   }

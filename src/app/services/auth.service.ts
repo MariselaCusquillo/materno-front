@@ -17,6 +17,8 @@ export class AuthService {
 
   accessToken: any = '';
   verificate: any='';
+  //role : string = '';
+
   private _authenticated: boolean = false;
 
   constructor(private _methodService: MethodsService,
@@ -28,7 +30,9 @@ export class AuthService {
     return this._methodService.post('user/login', credentials).pipe(
       finalize(()=>this.spinner.hide()),
       tap((res: any) => {
-        //console.log("resopuesta=>",res)
+        //console.log("resopuesta=>",res);
+        localStorage.setItem("role", res.role);
+        
         this.accessToken = res.token;
         //this.verificate = res.userVerificate;
         //localStorage.setItem('tokenValidate',this.verificate);
@@ -50,6 +54,8 @@ export class AuthService {
   isAuthenticated(): boolean {
     return Boolean(localStorage.getItem('accessToken') && localStorage.getItem('tokenValidate'));
   }
+
+  
 
 
 

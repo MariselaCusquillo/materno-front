@@ -1,0 +1,548 @@
+
+<div class="content-wrapper" id="content">
+    
+    <div class="card card-warning"  id="content">
+    
+      
+      <h2 class="card-title">ESTÁNDAR E INDICADOR DE PROCESO: % INSUMOS ESENCIALES ATENCIÓN MATERNA Y RN
+      </h2>
+      <p class="card-text" id="content">
+        
+        <b>Descripción: </b>Porcentaje de insumos, equipos y medicamentos esenciales con los que cuenta cada unidad operativa para la atención de la salud materna y del/a recién nacido/a.
+      </p>
+      <!--TABLA PARA EL INSTRUCTIVO-->
+      <table class="table table-bordered" >
+        <thead>
+          <tr>
+            <th scope="col" style="text-align: center;" id="th"><b>INSTRUCTIVO</b></th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" id="inst" >
+              <b>1.</b> Realice  la medición de éste indicador en forma trimestral. <br>
+              <b>2.</b> Registre el nombre de la Zona, Provincia, el nombre del Distrito de Salud 
+              y su número, el nombre de la Unidad Operativa, la fecha de la medición, el mes 
+              evaluado y el nombre y apellido de la persona responsable de la medición. <br>
+              <b>3.</b> Realice la constatación física, en horas laborables del listado de insumos, equipos y medicamentos,
+               en las siguientes áreas del Hospital o Unidad de Salud, de acuerdo al nivel de complejidad y
+                número de salas: área de preparación, consultorio/s, onstétrico/s de Consulta Externa, farmacia, 
+                laboratorio, emergencia, sala/s de parto/s (área materna y del recién nacido/a), hospitalización obstétrica, cirugía obstétrica y anastesiología. Para la constatación de 
+                los medicamentos en la farmacia, se deberá verificar la existencia de un stock mínimo considerado por la Unidad de Salud. <br>
+              <b>4.</b> Registre en el casillero del instrumento en sentido vertical seleccione la opción (Si) si cumple o No cumple (NO), si no 
+              cumple con cada ítem del estándar. En caso de existir más de un ambiente, por ejemplo más de un
+               consultorio obstétrico se debe verificar en cada uno de ellos.
+                      </th>
+          </tr>
+        </tbody>
+      </table>
+  
+      <form autocomplete="off" [formGroup]="formInsert" (ngSubmit)="save()" >
+        <div class="card-body">
+          <h3> DATOS INFORMATIVOS</h3>
+          <div class="row">
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputZona">Zona:</label>
+                  <input type="text" id="InputZona" class="form-control" 
+                  formControlName="zona" [ngClass]="{'is-invalid': invalidField('zona')}" >
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputProvincia">Provincia:</label>
+                  <input type="text" id="InputProvincia" class="form-control" 
+                  formControlName="provincia" [ngClass]="{'is-invalid': invalidField('provincia')}" >
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputDistrito">Distrito:</label>
+                  <input type="text" id="InputDistrito" class="form-control" 
+                  formControlName="distrito" [ngClass]="{'is-invalid': invalidField('distrito')}" >
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputEstablecimiento">Establecimiento de Salud:</label>
+                  <input type="text" id="InputEstablecimiento" class="form-control" 
+                  formControlName="establecimiento" [ngClass]="{'is-invalid': invalidField('establecimiento')}" >
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+            
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputFecha">Fecha de medición:</label>
+                  <input type="text" id="InputFecha" class="form-control" 
+                  formControlName="fecha" placeholder="DD/MM/AAAA" [ngClass]="{'is-invalid': invalidField('fecha')}">
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+            
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputMes">Mes evaluado:</label>
+                  <select name="mes" type="text" id="InputMes" class="form-control" 
+                  formControlName="mes" [ngClass]="{'is-invalid': invalidField('mes')}" >
+                    <option value="enero_marzo">Enero - Marzo</option>
+                    <option value="abril_junio">Abril - Junio</option>
+                    <option value="julio_septiembre">Julio - Septiembre</option>
+                    <option value="octubre_diciembre">Octubre - Diciembre</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputResponsable">Responsable de la medición:</label>
+                  <input type="text" id="InputResponsable" class="form-control" 
+                  formControlName="responsable" [ngClass]="{'is-invalid': invalidField('responsable')}">
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+  
+          <h3> INSTRUMENTO: LISTA DE CHEQUEO</h3>
+  
+          <h4>INSUMOS Y MEDICAMENTOS: Seleccione la opción (Si) si cumple o (No) si no cumple</h4>
+  
+          <h5>Área de preparación</h5>
+  
+          <div class="row"> 
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputFonendoscopio">1.Fonendoscopio o estetoscopio</label>
+                  <select type="text" id="InputFonendoscopio" class="form-control" 
+                  formControlName="fonendoscopio" [ngClass]="{'is-invalid': invalidField('fonendoscopio')}" >
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputTensiometro">2.Tensiómetro</label>
+                  <select type="text" id="InputTensiometro" class="form-control" 
+                  formControlName="tensiometro" [ngClass]="{'is-invalid': invalidField('tensiometro')}" >
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputCinta">3.Tallímetro o cinta métrica</label>
+                  <select type="text" id="InputCinta" class="form-control" 
+                  formControlName="cinta" [ngClass]="{'is-invalid': invalidField('cinta')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputBalanza">4.Balanza de adulto</label>
+                  <select type="text" id="InputBalanza" class="form-control" 
+                  formControlName="balanza" [ngClass]="{'is-invalid': invalidField('balanza')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputTermometro">5.Termómetros</label>
+                  <select type="text" id="InputTermometro" class="form-control" 
+                  formControlName="termometro" [ngClass]="{'is-invalid': invalidField('termometro')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputPromedio" style="background-color: rgba(12, 202, 12, 0.541);">* Promedio de la sección: </label>
+                  <input type="text" id="InputPromedio" class="form-control" 
+                  formControlName="promedio" [ngClass]="{'is-invalid': invalidField('promedio')}" >
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+  
+          </div>
+  
+          <h5>Consultorio de Gineco-Obstetricia</h5>
+  
+          <div class="row"> 
+            
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputLavado">6.Lavabo/jabón liquido/alcohol o alcohol gel/toalla de papel</label>
+                  <select type="text" id="InputLavado" class="form-control" 
+                  formControlName="lavado" [ngClass]="{'is-invalid': invalidField('lavado')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputBasureros">7.Basureros con funda según tipo de desechos corto punzantes</label>
+                  <select type="text" id="InputBasureros" class="form-control" 
+                  formControlName="basureros" [ngClass]="{'is-invalid': invalidField('basureros')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputFonendoscopioGine">8.Fonendoscopio /estetoscopio</label>
+                  <select type="text" id="InputFonendoscopioGine" class="form-control" 
+                  formControlName="fonendoscopioGine" [ngClass]="{'is-invalid': invalidField('fonendoscopioGine')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputTensiometroGine">9.Tensiómetro</label>
+                  <select type="text" id="InputTensiometroGine" class="form-control" 
+                  formControlName="tensiometroGine" [ngClass]="{'is-invalid': invalidField('tensiometroGine')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputTermometroGine">10.Termómetro</label>
+                  <select type="text" id="InputTermometroGine" class="form-control" 
+                  formControlName="termometroGine" [ngClass]="{'is-invalid': invalidField('termometroGine')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputLampara">11.Lámpara de cuello ganso </label>
+                  <select type="text" id="InputLampara" class="form-control" 
+                  formControlName="lampara" [ngClass]="{'is-invalid': invalidField('lampara')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputCamilla">12.Camilla ginecológica o mesa de exámenes con pierneras </label>
+                  <select type="text" id="InputCamilla" class="form-control" 
+                  formControlName="camilla" [ngClass]="{'is-invalid': invalidField('camilla')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputCorneta">13.Corneta de Pinard y/o Dopler</label>
+                  <select type="text" id="InputCorneta" class="form-control" 
+                  formControlName="corneta" [ngClass]="{'is-invalid': invalidField('corneta')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputCintaGine">14.Cinta métrica</label>
+                  <select type="text" id="InputCintaGine" class="form-control" 
+                  formControlName="cintaGine" [ngClass]="{'is-invalid': invalidField('cintaGine')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputPapelera">15.Papelera (solicitud de exámenes de laboratorio y gabinetes)</label>
+                  <select type="text" id="InputPapelera" class="form-control" 
+                  formControlName="papelera" [ngClass]="{'is-invalid': invalidField('papelera')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputGuantes">16.Guantes estériles desechables</label>
+                  <select type="text" id="InputGuantes" class="form-control" 
+                  formControlName="guantes" [ngClass]="{'is-invalid': invalidField('guantes')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputSoluciones">17.Soluciones desinfectantes: (clorhexidina–alcohol yodado)</label>
+                  <select type="text" id="InputSoluciones" class="form-control" 
+                  formControlName="soluciones" [ngClass]="{'is-invalid': invalidField('soluciones')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputTirillas">18.Tirillas para proteinuria</label>
+                  <select type="text" id="InputTirillas" class="form-control" 
+                  formControlName="tirillas" [ngClass]="{'is-invalid': invalidField('tirillas')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputEspeculos">19.Espéculos  vaginales estériles y/o desechables</label>
+                  <select type="text" id="InputEspeculos" class="form-control" 
+                  formControlName="especulos" [ngClass]="{'is-invalid': invalidField('especulos')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputEspatulas">20.Espátulas de Aire/cepillo endocervical/fijador para placas/placas porta objetos</label>
+                  <select type="text" id="InputEspatulas" class="form-control" 
+                  formControlName="espatulas" [ngClass]="{'is-invalid': invalidField('espatulas')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputSolucionesGine">21.Soluciones desinfectantes:(clorhexidina–alcohol yodado)</label>
+                  <select type="text" id="InputSolucionesGine" class="form-control" 
+                  formControlName="solucionesGine" [ngClass]="{'is-invalid': invalidField('solucionesGine')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputHierro">22.Hierro oral (sulfato ferrosa tab 50 mg) y acido fólico tab 1 mg</label>
+                  <select type="text" id="InputHierro" class="form-control" 
+                  formControlName="hierro" [ngClass]="{'is-invalid': invalidField('hierro')}">
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                  </select>
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputPromedioGine" style="background-color: rgba(12, 202, 12, 0.541);">* Promedio de la sección: </label>
+                  <input type="text" id="InputPromedioGine" class="form-control" 
+                  formControlName="promedioGine" [ngClass]="{'is-invalid': invalidField('promedioGine')}" >
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+  
+          </div>
+  
+          <h6>Promedio (Si aplica)</h6>
+          <p> ¿Cuántos ítems del estándar cumple? / ¿Cuántos ítems del estándar debe cumplir de acuerdo a su nivel de complejidad?</p>
+          <div class="row">
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputNumerador">Numerador:</label>
+                  <input type="text" id="InputNumerador" class="form-control" 
+                  formControlName="numerador" [ngClass]="{'is-invalid': invalidField('numerador')}" >
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputDenominador">Denominador:</label>
+                  <input type="text" id="InputDenominador" class="form-control" 
+                  formControlName="denominador" [ngClass]="{'is-invalid': invalidField('denominador')}" >
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-6 col-sm-12 mr-auto">
+              <div class="form-group">
+                <div class="form-check">
+                  <label for="InputPromedioGeneral">Porcentaje de cumplimiento del estándar:</label>
+                  <input type="text" id="InputPromedioGeneral" class="form-control" 
+                  formControlName="promedioGeneral" [ngClass]="{'is-invalid': invalidField('promedioGeneral')}" >
+                  <span class="invalid-feedback">Campo obligatorio.</span>
+                </div>
+              </div>
+            </div>
+          
+          
+          
+          </div>
+  
+  
+  
+        </div>
+        <div class="text-center"  id="content">
+          <button type="submit" class="btn btn-warning" style="width: 10rem;"><i class="fas fa-plus mr-1"></i>Guardar</button>
+  
+        </div>
+  
+  
+        
+        <br>
+        
+  
+      </form>
+    </div>
+    
+  </div>
+    
+    
+    

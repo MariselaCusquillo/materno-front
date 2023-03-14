@@ -7,12 +7,13 @@ import { LayoutModule } from 'src/app/layouts/layout.module';
 
 @NgModule({
   declarations: [
+
   ],
   imports: [
     CommonModule,
     MedicoRoutingModule,
     LayoutModule
   ]
-})
+}) 
 export class MedicoModule {
 }

@@ -36,7 +36,7 @@
         </a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="role =='admin'">
           <a routerLink="/private/seguridad/usuarios" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
             <p>
@@ -44,8 +44,8 @@
             </p>
           </a>
         </li>
-
-        <li class="nav-item">
+        
+        <li class="nav-item" *ngIf="role =='admin'">
           <a routerLink="/private/inventario/usuarios" class="nav-link">
             <i class="nav-icon fas fa-list"></i>
             <p>
@@ -55,7 +55,7 @@
         </li>
 
 
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="role =='admin'">
           <a routerLink="/private/inventario/establecimientos" class="nav-link">
             <i class="nav-icon fas fa-warehouse"></i>
             <p>
@@ -64,8 +64,16 @@
           </a>
         </li>
 
-        
 
+        <li class="nav-item" *ngIf="role !='admin'">
+          <a routerLink="/private/seguridad/indicadores" class="nav-link">
+            <i class="nav-icon fas fa-list"></i>
+            <p>
+              Indicadores
+            </p>
+          </a>
+        </li>
+        
   
       </ul>
     </nav>
