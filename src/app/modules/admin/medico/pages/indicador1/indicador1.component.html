@@ -47,7 +47,7 @@
               <div class="form-group">
                 <div class="form-check">
                   <label for="InputZona">Zona:</label>
-                  <input type="text" id="InputZona" class="form-control" 
+                  <input type="text" id="InputZona" class="form-control text-uppercase" 
                   formControlName="zona" [ngClass]="{'is-invalid': invalidField('zona')}" >
                   <span class="invalid-feedback">Campo obligatorio.</span>
                 </div>
@@ -58,7 +58,7 @@
               <div class="form-group">
                 <div class="form-check">
                   <label for="InputProvincia">Provincia:</label>
-                  <input type="text" id="InputProvincia" class="form-control" 
+                  <input type="text" id="InputProvincia" class="form-control text-uppercase" 
                   formControlName="provincia" [ngClass]="{'is-invalid': invalidField('provincia')}" >
                   <span class="invalid-feedback">Campo obligatorio.</span>
                 </div>
@@ -69,7 +69,7 @@
               <div class="form-group">
                 <div class="form-check">
                   <label for="InputDistrito">Distrito:</label>
-                  <input type="text" id="InputDistrito" class="form-control" 
+                  <input type="text" id="InputDistrito" class="form-control text-uppercase" 
                   formControlName="distrito" [ngClass]="{'is-invalid': invalidField('distrito')}" >
                   <span class="invalid-feedback">Campo obligatorio.</span>
                 </div>
@@ -80,7 +80,7 @@
               <div class="form-group">
                 <div class="form-check">
                   <label for="InputEstablecimiento">Establecimiento de Salud:</label>
-                  <input type="text" id="InputEstablecimiento" class="form-control" 
+                  <input type="text" id="InputEstablecimiento" class="form-control text-uppercase" 
                   formControlName="establecimiento" [ngClass]="{'is-invalid': invalidField('establecimiento')}" >
                   <span class="invalid-feedback">Campo obligatorio.</span>
                 </div>
@@ -92,7 +92,7 @@
               <div class="form-group">
                 <div class="form-check">
                   <label for="InputFecha">Fecha de medición:</label>
-                  <input type="text" id="InputFecha" class="form-control" 
+                  <input type="date" id="InputFecha" class="form-control text-uppercase" 
                   formControlName="fecha" placeholder="DD/MM/AAAA" [ngClass]="{'is-invalid': invalidField('fecha')}">
                   <span class="invalid-feedback">Campo obligatorio.</span>
                 </div>
@@ -121,7 +121,7 @@
               <div class="form-group">
                 <div class="form-check">
                   <label for="InputResponsable">Responsable de la medición:</label>
-                  <input type="text" id="InputResponsable" class="form-control" 
+                  <input type="text" id="InputResponsable" class="form-control text-uppercase" 
                   formControlName="responsable" [ngClass]="{'is-invalid': invalidField('responsable')}">
                   <span class="invalid-feedback">Campo obligatorio.</span>
                 </div>
@@ -529,8 +529,9 @@
   
   
         </div>
+       
         <div class="text-center"  id="content">
-          <button type="submit" class="btn btn-warning" style="width: 10rem;"><i class="fas fa-plus mr-1"></i>Guardar</button>
+          <button type="submit" class="btn btn-warning" style="width: 10rem;" ><i class="fas fa-plus mr-1"></i>Guardar</button>
   
         </div>
   
@@ -546,3 +547,4 @@
     
     
     
+

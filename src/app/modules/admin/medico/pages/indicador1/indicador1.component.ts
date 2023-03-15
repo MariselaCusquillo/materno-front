@@ -13,8 +13,8 @@ import { functions } from 'src/app/helpers/functions';
   templateUrl: './indicador1.component.html',
   styleUrls: ['./indicador1.component.css']
 })
-export class Indicador1Component implements OnInit {
 
+export class Indicador1Component implements OnInit{
   formSubmitted = false;
   indicador1: any = [];
 
@@ -64,10 +64,11 @@ export class Indicador1Component implements OnInit {
     private _form : FormBuilder,
     private _inventoryService: InventoryService,
     private _utilService: UtilService,
-    public dialogRef: MatDialogRef<Indicador1Component>
+    //public dialogRef: MatDialogRef<Indicador1Component>
   ) { }
 
   ngOnInit(): void {
+    console.log('Ingreso');
   }
 
   //TODO: Actualiza los datos
@@ -134,6 +135,4 @@ export class Indicador1Component implements OnInit {
   return functions.invalidField(field, this.formInsert, this.formSubmitted);
 
 }
-
-
 }

@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { Indicador1RoutingModule } from './indicador1-routing.module';
-import { Indicador1Component } from './indicador1.component';
+import { IndicadoresRoutingModule } from './indicadores-routing.module';
+import { IndicadoresComponent } from './indicadores.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    Indicador1Component
+    IndicadoresComponent
   ],
   imports: [
     CommonModule,
-    Indicador1RoutingModule,
+    IndicadoresRoutingModule,
     ReactiveFormsModule,
     FormsModule
   ]
 })
-export class Indicador1Module { }
+export class IndicadoresModule { }

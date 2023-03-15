@@ -5,13 +5,14 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { LayoutModule } from 'src/app/layouts/layout.module';
 
 
+
 @NgModule({
   declarations: [
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    LayoutModule
+    LayoutModule,
   ]
 })
 export class AdminModule {

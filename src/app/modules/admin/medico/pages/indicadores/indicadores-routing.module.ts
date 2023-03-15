@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { IndicadoresComponent } from './indicadores.component';
 
 const routes: Routes = [
-  {path:'indicadores', loadChildren: ()=> import('./indicadores.module').then(m=>m.IndicadoresModule)}
+  {path:'', component:IndicadoresComponent}
 ];
 
 @NgModule({

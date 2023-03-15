@@ -10,13 +10,12 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { IndicadoresComponent } from './modules/medico/indicadores/indicadores.component';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    IndicadoresComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
